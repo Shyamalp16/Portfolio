@@ -1,17 +1,17 @@
 {
   "personal": {
-    "name": "John Doe",
+    "name": "Shyamal Patel",
     "title": "Computer Science Student",
-    "username": "johndoe",
-    "location": "San Francisco, CA",
-    "website": "johndoe.dev",
-    "resumeUrl": "https://johndoe.dev/resume.pdf"
+    "username": "shyamalp",
+    "location": "Toronto, ON",
+    "website": "shyamalp.fyi",
+    "resumeUrl": "https://drive.google.com/file/d/13VonrzM-L4LQHbCR4huu2tS2U6Qf9fuD/view?usp=sharing"
   },
   "contact": {
-    "email": "john.doe@email.com",
-    "phone": "+1 (555) 123-4567",
-    "linkedin": "linkedin.com/in/johndoe",
-    "github": "github.com/johndoe"
+    "email": "patelshyamal016@gmail.com",
+    "phone": "+1 (647) 877-9332",
+    "linkedin": "linkedin.com/in/Shyamalp16",
+    "github": "github.com/Shyamalp16"
   },
   "about": [
     "I am a passionate Computer Science student with a strong foundation in",
@@ -24,23 +24,22 @@
   ],
   "skills": {
     "Programming Languages": [
-      { "name": "JavaScript/TypeScript", "level": 90 },
+      { "name": "JavaScript/TypeScript", "level": 70 },
       { "name": "Python", "level": 85 },
       { "name": "Java", "level": 80 },
-      { "name": "C++", "level": 75 },
-      { "name": "Go", "level": 70 }
+      { "name": "C", "level": 90 },
+      { "name": "C++", "level": 90 },
+      { "name": "Go", "level": 90 }
     ],
     "Web Technologies": [
-      { "name": "React/Next.js", "level": 90 },
-      { "name": "Node.js", "level": 85 },
-      { "name": "HTML/CSS", "level": 95 },
-      { "name": "Express.js", "level": 80 }
+      { "name": "React/Next.js", "level": 70 },
+      { "name": "Node.js", "level": 90 },
+      { "name": "HTML/CSS", "level": 85 }
     ],
     "Databases & Tools": [
-      { "name": "PostgreSQL", "level": 80 },
-      { "name": "MongoDB", "level": 85 },
-      { "name": "Git/GitHub", "level": 95 },
-      { "name": "Docker", "level": 75 }
+      { "name": "PostgreSQL", "level": 95 },
+      { "name": "MongoDB", "level": 70 },
+      { "name": "Git/GitHub", "level": 95 }
     ]
   },
   "projects": [
@@ -99,10 +98,10 @@
   ],
   "education": {
     "degree": "Bachelor of Science in Computer Science",
-    "period": "2021 - 2025",
-    "university": "State University of Technology",
-    "gpa": "3.8/4.0",
-    "expectedGraduation": "May 2025",
+    "period": "2022 - 2026",
+    "university": "York University",
+    "gpa": "3.1/4.0",
+    "expectedGraduation": "April 2026",
     "coursework": [
       "Data Structures and Algorithms",
       "Software Engineering",

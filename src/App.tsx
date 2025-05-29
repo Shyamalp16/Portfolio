@@ -36,7 +36,7 @@ const generateCommands = () => {
         '  about         - Learn about me',
         '  skills        - View my technical skills',
         '  projects      - See my projects',
-        '  experience    - View my work experience',
+        // '  experience    - View my work experience',
         '  education     - See my educational background',
         '  contact       - Get my contact information',
         '  resume        - View resume and download link',
@@ -89,26 +89,26 @@ const generateCommands = () => {
         return result;
       })()
     },
-    experience: {
-      description: 'View work experience',
-      output: (() => {
-        const result = ['Work Experience:', ''];
-        portfolioData.experience.forEach((exp, index) => {
-          const isLast = index === portfolioData.experience.length - 1;
-          result.push(`${exp.period} | ${exp.position}`);
-          result.push(`├── Company: ${exp.company}`);
-          result.push('├── Responsibilities:');
-          exp.responsibilities.forEach((resp, respIndex) => {
-            const isLastResp = respIndex === exp.responsibilities.length - 1;
-            const prefix = isLastResp ? '│   └──' : '│   ├──';
-            result.push(`${prefix} ${resp}`);
-          });
-          result.push(`└── Achievements: ${exp.achievements}`);
-          if (!isLast) result.push('');
-        });
-        return result;
-      })()
-    },
+    // experience: {
+    //   description: 'View work experience',
+    //   output: (() => {
+    //     const result = ['Work Experience:', ''];
+    //     portfolioData.experience.forEach((exp, index) => {
+    //       const isLast = index === portfolioData.experience.length - 1;
+    //       result.push(`${exp.period} | ${exp.position}`);
+    //       result.push(`├── Company: ${exp.company}`);
+    //       result.push('├── Responsibilities:');
+    //       exp.responsibilities.forEach((resp, respIndex) => {
+    //         const isLastResp = respIndex === exp.responsibilities.length - 1;
+    //         const prefix = isLastResp ? '│   └──' : '│   ├──';
+    //         result.push(`${prefix} ${resp}`);
+    //       });
+    //       result.push(`└── Achievements: ${exp.achievements}`);
+    //       if (!isLast) result.push('');
+    //     });
+    //     return result;
+    //   })()
+    // },
     education: {
       description: 'See educational background',
       output: (() => {

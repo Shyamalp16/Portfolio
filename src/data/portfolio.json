@@ -2,7 +2,7 @@
   "personal": {
     "name": "Shyamal Patel",
     "title": "Computer Science Student",
-    "username": "shyamalp",
+    "username": "shyamalp16",
     "location": "Toronto, ON",
     "website": "shyamalp.fyi",
     "resumeUrl": "https://drive.google.com/file/d/13VonrzM-L4LQHbCR4huu2tS2U6Qf9fuD/view?usp=sharing"
@@ -25,11 +25,12 @@
   "skills": {
     "Programming Languages": [
       { "name": "JavaScript/TypeScript", "level": 70 },
-      { "name": "Python", "level": 85 },
-      { "name": "Java", "level": 80 },
       { "name": "C", "level": 90 },
       { "name": "C++", "level": 90 },
-      { "name": "Go", "level": 90 }
+      { "name": "Go", "level": 90 },
+      { "name": "Python", "level": 85 },
+      { "name": "Java", "level": 80 },
+      { "name": "SQL", "level": 90 }
     ],
     "Web Technologies": [
       { "name": "React/Next.js", "level": 70 },
@@ -37,39 +38,35 @@
       { "name": "HTML/CSS", "level": 85 }
     ],
     "Databases & Tools": [
+      { "name": "Linux", "level": 95 },
+      { "name": "Git", "level": 95 },
+      { "name": "Postman", "level": 80 },
       { "name": "PostgreSQL", "level": 95 },
       { "name": "MongoDB", "level": 70 },
-      { "name": "Git/GitHub", "level": 95 }
+      { "name": "Firebase", "level": 80 }
     ]
   },
   "projects": [
     {
-      "name": "E-Commerce Platform",
-      "description": "Full-stack web application with payment integration",
-      "techStack": "React, Node.js, PostgreSQL, Stripe",
-      "github": "github.com/johndoe/ecommerce-platform",
-      "status": "Completed"
-    },
-    {
-      "name": "Task Management System",
-      "description": "Real-time collaborative task manager",
-      "techStack": "React, Socket.io, MongoDB, Express",
-      "github": "github.com/johndoe/task-manager",
+      "name": "P2P Cloud Gaming Platform (ReflexGaming)",
+      "description": "Realtime P2P low-latency cloud gaming platform engineered with Windows and Direct3D11 APIs. Implemented NVENC with CUDA hardware acceleration for video and audio encoding resulting in latency as low as 15ms. Created a matchmaking server and integrated it with WebRTC and client/host side clients.",
+      "techStack": "C++, Go, Windows, Direct3D11, CUDA, WebRTC, FFmpeg, NodeJS",
+      "github": "https://github.com/Shyamalp16/CloudGaming",
       "status": "In Development"
     },
     {
-      "name": "Weather Prediction ML Model",
-      "description": "Machine learning model for weather forecasting",
-      "techStack": "Python, Scikit-learn, Pandas, Flask",
-      "github": "github.com/johndoe/weather-ml",
-      "status": "Completed"
+      "name": "2D Game Engine",
+      "description": "Developed a 2D Game Engine using Java, GSON, LWJGL, OpenGL, OpenAL, and ImGui, focusing on enhancing development workflows. Key contributions included engineering intuitive Editor and Play scene interfaces with custom event listeners and an animation system, which improved development efficiency by 25%. Visual fidelity and performance were boosted by 15% through advanced rendering techniques like GLSL Shaders and texture batching. Additionally, a real-time adjustable Properties window was implemented, reducing iteration time by 30 minutes per session and increasing developer productivity by 20%. JBox2D was integrated for robust physics simulation.",
+      "techStack": "Java, GSON, LWJGL, OpenGL, OpenAL, ImGUI",
+      "github": "https://github.com/Shyamalp16/GameEngine",
+      "status": "Finished"
     },
     {
-      "name": "Chat Application",
-      "description": "Real-time messaging with file sharing",
-      "techStack": "Socket.io, React, Node.js, MongoDB",
-      "github": "github.com/johndoe/chat-app",
-      "status": "Completed"
+      "name": "Raspberry Pi Record Player",
+      "description": "Integrated RFID scanner to detect album covers and trigger Spotify playlists, achieving seamless playback on RaspberryPi 5 as a Spotify Connect device. Developed Python scripts to map RFID tags to playlists, ensuring instant, accurate album playback and enhancing user interaction. Configured Raspberry Pi GPIO pins for reliable RFID tag detection, achieving high accuracy and seamless communication in the record player setup. Leveraged Spotify API for authentication and playback management, creating a streamlined experience for RFID-based music selection and control.",
+      "techStack": "RFID Stickers and Scanners, Python, SpotifyApi",
+      "github": "#",
+      "status": "Finished"
     }
   ],
   "experience": [
@@ -103,17 +100,11 @@
     "gpa": "3.1/4.0",
     "expectedGraduation": "April 2026",
     "coursework": [
-      "Data Structures and Algorithms",
-      "Software Engineering",
-      "Database Systems",
-      "Machine Learning",
-      "Web Development",
-      "Computer Networks"
-    ],
-    "certifications": [
-      "AWS Certified Developer Associate (2023)",
-      "Google Cloud Professional Developer (2023)",
-      "MongoDB Certified Developer (2022)"
+      "Advanced Data Structures and Algorithms",
+      "Software Design",
+      "Design and Analysis of Algorithms",
+      "Embedded Systems",
+      "Database Management Systems"
     ]
   },
   "system": {
@@ -128,10 +119,10 @@
     "memory": "16GB DDR4",
     "disk": "1TB NVMe SSD",
     "projectsCompleted": "15+",
-    "primaryLanguages": "JS, Python, Java, C++",
+    "primaryLanguages": "C, C++, Go, Python, Java",
     "frameworks": "React, Node.js, Express",
     "databases": "PostgreSQL, MongoDB",
-    "tools": "Git, Docker, AWS"
+    "tools": "Linux, Git, Docker, AWS"
   },
   "files": [
     {

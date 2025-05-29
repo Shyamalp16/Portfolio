@@ -9,6 +9,26 @@ interface Command {
   timestamp: Date;
 }
 
+// Helper function to make URLs clickable
+const makeClickableLink = (url: string, text?: string): string => {
+  if (!url || url.trim() === '#' || url.trim() === '') {
+    return text || url; // Return original text or URL if not a valid link or just a placeholder
+  }
+  const displayText = text || url;
+  // Ensure the URL has a protocol, default to https
+  let href = url;
+  if (!url.startsWith('http://') && !url.startsWith('https://') && !url.startsWith('mailto:')) {
+    if (url.includes('@') && !url.startsWith('mailto:')) { // Basic email check
+      href = `mailto:${url}`;
+    } else {
+      href = `https://${url}`;
+    }
+  } else {
+    href = url;
+  }
+  return `<a href="${href}" target="_blank" class="text-cyan-400 hover:underline">${displayText}</a>`;
+};
+
 // Helper function to generate skill bars
 const generateSkillBar = (level: number): string => {
   const totalBars = 20;
@@ -79,12 +99,90 @@ const generateCommands = () => {
       description: 'See my projects',
       output: (() => {
         const result = ['Projects Portfolio:', ''];
+        const baseIndent = '   ';
+        const firstLineItemPrefix = '├── ';
+        const subsequentLineItemPrefix = '│   ';
+        const lastLineItemPrefix = '└── ';
+
+        const descriptionLabel = 'Description: ';
+        // Indentation for continuation lines of description, aligns text with text after "Description: "
+        const descriptionContinuationIndent = ' '.repeat(descriptionLabel.length); 
+
+        // Approximate width for the description text content itself, before prefixes are added.
+        const textContentWidth = 75; 
+
         portfolioData.projects.forEach((project, index) => {
           result.push(`${index + 1}. ${project.name}`);
-          result.push(`   ├── Description: ${project.description}`);
-          result.push(`   ├── Tech Stack: ${project.techStack}`);
-          result.push(`   ├── GitHub: ${project.github}`);
-          result.push(`   └── Status: ${project.status}`);
+
+          // Format Description
+          const actualDescription = project.description;
+          if (actualDescription && actualDescription.trim() !== '') {
+            const segments = actualDescription.split('\\n'); // Split by literal \\n from JSON string, becomes \n in JS
+            let isFirstLineOfOverallDescriptionOutput = true;
+
+            segments.forEach((segment) => {
+              // If the segment from JSON (after splitting by \\n) is empty,
+              // and we're not at the very beginning of printing the description,
+              // print an empty line with the continuation prefix.
+              if (segment.trim() === '' && !isFirstLineOfOverallDescriptionOutput) {
+                result.push(`${baseIndent}${subsequentLineItemPrefix}`);
+                return; // continue to next segment
+              }
+              
+              const words = segment.split(' ');
+              let lineBuffer = '';
+
+              for (let i = 0; i < words.length; i++) {
+                const word = words[i];
+                // Try adding the next word
+                const potentialLine = lineBuffer === '' ? word : `${lineBuffer} ${word}`;
+
+                if (potentialLine.length <= textContentWidth) {
+                  lineBuffer = potentialLine; // Word fits, add to current line buffer
+                } else {
+                  // Word doesn't fit. Push the existing lineBuffer (if not empty).
+                  if (lineBuffer !== '') {
+                    if (isFirstLineOfOverallDescriptionOutput) {
+                      result.push(`${baseIndent}${firstLineItemPrefix}${descriptionLabel}${lineBuffer}`);
+                      isFirstLineOfOverallDescriptionOutput = false;
+                    } else {
+                      result.push(`${baseIndent}${subsequentLineItemPrefix}${descriptionContinuationIndent}${lineBuffer}`);
+                    }
+                  }
+                  // Start a new line with the current word.
+                  // If the word itself is too long, it will be on its own line.
+                  lineBuffer = word; 
+                  // If this new line (just the word) is pushed immediately because it's too long
+                  if (word.length > textContentWidth && lineBuffer !== '') { // Check lineBuffer again in case word was pushed and cleared
+                     if (isFirstLineOfOverallDescriptionOutput) {
+                        result.push(`${baseIndent}${firstLineItemPrefix}${descriptionLabel}${lineBuffer}`);
+                        isFirstLineOfOverallDescriptionOutput = false;
+                     } else {
+                        result.push(`${baseIndent}${subsequentLineItemPrefix}${descriptionContinuationIndent}${lineBuffer}`);
+                     }
+                     lineBuffer = ''; // Word has been pushed
+                  }
+                }
+              }
+
+              // Push any remaining text in lineBuffer for the current segment
+              if (lineBuffer !== '') {
+                if (isFirstLineOfOverallDescriptionOutput) {
+                  result.push(`${baseIndent}${firstLineItemPrefix}${descriptionLabel}${lineBuffer}`);
+                  isFirstLineOfOverallDescriptionOutput = false; 
+                } else {
+                  result.push(`${baseIndent}${subsequentLineItemPrefix}${descriptionContinuationIndent}${lineBuffer}`);
+                }
+              }
+            });
+          } else {
+            // Handles empty or whitespace-only description
+            result.push(`${baseIndent}${firstLineItemPrefix}${descriptionLabel}`);
+          }
+
+          result.push(`${baseIndent}${firstLineItemPrefix}Tech Stack: ${project.techStack}`);
+          result.push(`${baseIndent}${firstLineItemPrefix}GitHub: ${makeClickableLink(project.github)}`);
+          result.push(`${baseIndent}${lastLineItemPrefix}Status: ${project.status}`);
           result.push('');
         });
         return result;
@@ -131,13 +229,13 @@ const generateCommands = () => {
         
         result.push(`└── Expected Graduation: ${edu.expectedGraduation}`);
         result.push('');
-        result.push('Certifications:');
+        // result.push('Certifications:');
         
-        edu.certifications.forEach((cert, index) => {
-          const isLast = index === edu.certifications.length - 1;
-          const prefix = isLast ? '└──' : '├──';
-          result.push(`${prefix} ${cert}`);
-        });
+        // edu.certifications.forEach((cert, index) => {
+        //   const isLast = index === edu.certifications.length - 1;
+        //   const prefix = isLast ? '└──' : '├──';
+        //   result.push(`${prefix} ${cert}`);
+        // });
         
         return result;
       })()
@@ -147,10 +245,10 @@ const generateCommands = () => {
       output: [
         'Contact Information:',
         '',
-        `📧 Email:    ${portfolioData.contact.email}`,
-        `🔗 LinkedIn: ${portfolioData.contact.linkedin}`,
-        `🐙 GitHub:   ${portfolioData.contact.github}`,
-        `🌐 Website:  ${portfolioData.personal.website}`,
+        `📧 Email:    ${makeClickableLink(portfolioData.contact.email)}`,
+        `🔗 LinkedIn: ${makeClickableLink(portfolioData.contact.linkedin)}`,
+        `🐙 GitHub:   ${makeClickableLink(portfolioData.contact.github)}`,
+        `🌐 Website:  ${makeClickableLink(portfolioData.personal.website)}`,
         `📱 Phone:    ${portfolioData.contact.phone}`,
         `📍 Location: ${portfolioData.personal.location}`,
         '',
@@ -166,16 +264,16 @@ const generateCommands = () => {
         `                ${portfolioData.personal.title}                   `,
         '═══════════════════════════════════════════════════════════',
         '',
-        `📧 ${portfolioData.contact.email}  📱 ${portfolioData.contact.phone}`,
-        `🔗 ${portfolioData.contact.linkedin}  🐙 ${portfolioData.contact.github}`,
+        `📧 ${makeClickableLink(portfolioData.contact.email)}  📱 ${portfolioData.contact.phone}`,
+        `🔗 ${makeClickableLink(portfolioData.contact.linkedin)}  🐙 ${makeClickableLink(portfolioData.contact.github)}`,
         '',
         `🎓 ${portfolioData.education.degree} (${portfolioData.education.period}) - GPA: ${portfolioData.education.gpa}`,
-        `💼 ${portfolioData.experience[0].position} at ${portfolioData.experience[0].company}`,
+        // `💼 ${portfolioData.experience[0].position} at ${portfolioData.experience[0].company}`,
         `🛠️ ${portfolioData.system.primaryLanguages}`,
         '',
-        `📄 Download PDF: ${portfolioData.personal.resumeUrl}`,
+        `📄 Download PDF: ${makeClickableLink(portfolioData.personal.resumeUrl)}`,
         '',
-        'Use "experience", "education", "skills" for details!',
+        'Use "education", "skills" for details!',
       ]
     },
     whoami: {
@@ -272,7 +370,7 @@ export default function App() {
         'Initiating download...',
         '',
         `📄 Downloading: ${portfolioData.personal.name.replace(' ', '_')}_Resume.pdf`,
-        `🔗 Source: ${portfolioData.personal.resumeUrl}`,
+        `🔗 Source: ${makeClickableLink(portfolioData.personal.resumeUrl)}`,
         '',
         'If download doesn\'t start automatically, click the link above.',
       ];
@@ -281,7 +379,7 @@ export default function App() {
         const link = document.createElement('a');
         link.href = portfolioData.personal.resumeUrl;
         link.download = `${portfolioData.personal.name.replace(' ', '_')}_Resume.pdf`;
-        link.target = '_blank';
+        link.target = '_blank'; // Ensures it opens in a new tab if not downloaded directly
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);

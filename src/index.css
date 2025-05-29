@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-light: #000000;
+  --color-dark: #00ff00;
+}
+
+body {
+  font-family: 'Courier New', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  color: #00ff00;
+  background: #000000;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Terminal-specific styles */
+.terminal-cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Custom scrollbar for terminal */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00ff00;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #00cc00;
+}
+
+/* Selection color */
+::selection {
+  background: #00ff00;
+  color: #000000;
+}
+
+/* Input focus styles */
+input:focus {
+  outline: none;
+}
+
+/* Terminal text effects */
+.terminal-text {
+  text-shadow: 0 0 5px currentColor;
+}
+
+/* Smooth animations */
+* {
+  transition: all 0.1s ease;
+}
+
+/* ASCII art styling */
+pre {
+  font-family: 'Courier New', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  line-height: 1.2;
+}
+
+/* Terminal window styling */
+.terminal-window {
+  border: 1px solid #333;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+/* Command output styling */
+.command-output {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Progress bar styling for skills */
+.progress-bar {
+  display: inline-block;
+  background: #333;
+  color: #00ff00;
+}
+
+/* Matrix-like effect for background */
+@keyframes matrix {
+  0% { transform: translateY(-100vh); }
+  100% { transform: translateY(100vh); }
+}
+
+.matrix-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.1;
+}
+
+/* Terminal prompt styling */
+.terminal-prompt {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.terminal-path {
+  color: #0099ff;
+}
+
+.terminal-symbol {
+  color: #ffffff;
+}
+
+/* Error text styling */
+.error-text {
+  color: #ff4444;
+}
+
+/* Success text styling */
+.success-text {
+  color: #44ff44;
+}
+
+/* Warning text styling */
+.warning-text {
+  color: #ffff44;
+}
+
+/* Info text styling */
+.info-text {
+  color: #4444ff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  .terminal-window {
+    border-radius: 0;
+    border: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .terminal-window {
+    border: 1px solid black;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  body {
+    background: #000000;
+    color: #ffffff;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

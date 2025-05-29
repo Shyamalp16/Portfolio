@@ -1,0 +1,167 @@
+{
+  "personal": {
+    "name": "John Doe",
+    "title": "Computer Science Student",
+    "username": "johndoe",
+    "location": "San Francisco, CA",
+    "website": "johndoe.dev",
+    "resumeUrl": "https://johndoe.dev/resume.pdf"
+  },
+  "contact": {
+    "email": "john.doe@email.com",
+    "phone": "+1 (555) 123-4567",
+    "linkedin": "linkedin.com/in/johndoe",
+    "github": "github.com/johndoe"
+  },
+  "about": [
+    "I am a passionate Computer Science student with a strong foundation in",
+    "programming, algorithms, and software development. I love creating",
+    "innovative solutions and exploring new technologies.",
+    "",
+    "Currently pursuing my degree while building practical projects that",
+    "showcase my skills and creativity. Always eager to learn and take on",
+    "new challenges in the world of technology."
+  ],
+  "skills": {
+    "Programming Languages": [
+      { "name": "JavaScript/TypeScript", "level": 90 },
+      { "name": "Python", "level": 85 },
+      { "name": "Java", "level": 80 },
+      { "name": "C++", "level": 75 },
+      { "name": "Go", "level": 70 }
+    ],
+    "Web Technologies": [
+      { "name": "React/Next.js", "level": 90 },
+      { "name": "Node.js", "level": 85 },
+      { "name": "HTML/CSS", "level": 95 },
+      { "name": "Express.js", "level": 80 }
+    ],
+    "Databases & Tools": [
+      { "name": "PostgreSQL", "level": 80 },
+      { "name": "MongoDB", "level": 85 },
+      { "name": "Git/GitHub", "level": 95 },
+      { "name": "Docker", "level": 75 }
+    ]
+  },
+  "projects": [
+    {
+      "name": "E-Commerce Platform",
+      "description": "Full-stack web application with payment integration",
+      "techStack": "React, Node.js, PostgreSQL, Stripe",
+      "github": "github.com/johndoe/ecommerce-platform",
+      "status": "Completed"
+    },
+    {
+      "name": "Task Management System",
+      "description": "Real-time collaborative task manager",
+      "techStack": "React, Socket.io, MongoDB, Express",
+      "github": "github.com/johndoe/task-manager",
+      "status": "In Development"
+    },
+    {
+      "name": "Weather Prediction ML Model",
+      "description": "Machine learning model for weather forecasting",
+      "techStack": "Python, Scikit-learn, Pandas, Flask",
+      "github": "github.com/johndoe/weather-ml",
+      "status": "Completed"
+    },
+    {
+      "name": "Chat Application",
+      "description": "Real-time messaging with file sharing",
+      "techStack": "Socket.io, React, Node.js, MongoDB",
+      "github": "github.com/johndoe/chat-app",
+      "status": "Completed"
+    }
+  ],
+  "experience": [
+    {
+      "period": "2023 - Present",
+      "position": "Software Development Intern",
+      "company": "TechCorp Solutions",
+      "responsibilities": [
+        "Developed web applications using React and Node.js",
+        "Collaborated with senior developers on large-scale projects",
+        "Participated in code reviews and agile development processes"
+      ],
+      "achievements": "Improved application performance by 30%"
+    },
+    {
+      "period": "2022 - 2023",
+      "position": "Freelance Web Developer",
+      "company": "Various small businesses",
+      "responsibilities": [
+        "Built responsive websites and web applications",
+        "Provided technical consultation and support",
+        "Managed project timelines and client communications"
+      ],
+      "achievements": "Successfully delivered 15+ projects"
+    }
+  ],
+  "education": {
+    "degree": "Bachelor of Science in Computer Science",
+    "period": "2021 - 2025",
+    "university": "State University of Technology",
+    "gpa": "3.8/4.0",
+    "expectedGraduation": "May 2025",
+    "coursework": [
+      "Data Structures and Algorithms",
+      "Software Engineering",
+      "Database Systems",
+      "Machine Learning",
+      "Web Development",
+      "Computer Networks"
+    ],
+    "certifications": [
+      "AWS Certified Developer Associate (2023)",
+      "Google Cloud Professional Developer (2023)",
+      "MongoDB Certified Developer (2022)"
+    ]
+  },
+  "system": {
+    "os": "Portfolio Linux x86_64",
+    "host": "Terminal Portfolio",
+    "kernel": "6.1.0-portfolio",
+    "uptime": "2 hours, 30 mins",
+    "shell": "bash 5.1.16",
+    "resolution": "1920x1080",
+    "terminal": "portfolio-term",
+    "cpu": "Intel i7-12700K",
+    "memory": "16GB DDR4",
+    "disk": "1TB NVMe SSD",
+    "projectsCompleted": "15+",
+    "primaryLanguages": "JS, Python, Java, C++",
+    "frameworks": "React, Node.js, Express",
+    "databases": "PostgreSQL, MongoDB",
+    "tools": "Git, Docker, AWS"
+  },
+  "files": [
+    {
+      "name": "projects/",
+      "type": "directory",
+      "permissions": "drwxr-xr-x",
+      "size": "4096",
+      "date": "Jan 15 10:30"
+    },
+    {
+      "name": "documents/",
+      "type": "directory", 
+      "permissions": "drwxr-xr-x",
+      "size": "4096",
+      "date": "Jan 15 10:30"
+    },
+    {
+      "name": "README.md",
+      "type": "file",
+      "permissions": "-rw-r--r--",
+      "size": "1024",
+      "date": "Jan 15 10:30"
+    },
+    {
+      "name": "resume.pdf",
+      "type": "file",
+      "permissions": "-rw-r--r--",
+      "size": "512",
+      "date": "Jan 15 10:30"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import portfolioData from './data/portfolio.json';
+import { Analytics } from "@vercel/analytics/react";
 
 interface Command {
   input: string;
@@ -323,6 +324,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-black text-green-400 font-mono overflow-hidden">
+      <Analytics />
       <div className="h-screen flex flex-col">
         {/* Terminal Header */}
         <div className="bg-gray-800 px-4 py-2 flex items-center justify-between border-b border-gray-600">

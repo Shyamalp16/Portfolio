@@ -72,6 +72,25 @@ pre {
   line-height: 1.2;
 }
 
+.terminal-ascii-art {
+  font-family: 'Courier New', 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+  line-height: 1.15;
+  letter-spacing: 0;
+  word-spacing: normal;
+  display: block;
+  font-size: 14px;
+  font-weight: normal;
+  tab-size: 1;
+  -moz-tab-size: 1;
+  text-rendering: geometricPrecision;
+  font-variant-ligatures: none;
+  font-feature-settings: "liga" 0, "calt" 0;
+  -webkit-font-feature-settings: "liga" 0, "calt" 0;
+  font-variant-numeric: tabular-nums;
+  width: auto;
+  margin: 0;
+}
+
 /* Terminal window styling */
 .terminal-window {
   border: 1px solid #333;

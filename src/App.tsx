@@ -196,25 +196,7 @@ const generateCommands = () => {
     neofetch: {
       description: 'Display system information',
       output: [
-        `                   -\`                     <span class="text-green-400">${portfolioData.personal.username}</span><span class="text-white">@</span><span class="text-green-400">portfolio</span>`,
-        '                  .o+`                    <span class="text-white">-----------------</span>',
-        `                 \`ooo/                    <span class="text-blue-400">OS:</span> ${portfolioData.system.os}`,
-        `                \`+oooo:                   <span class="text-blue-400">Host:</span> ${portfolioData.system.host}`,
-        `               \`+oooooo:                  <span class="text-blue-400">Kernel:</span> ${portfolioData.system.kernel}`,
-        `               -+oooooo+:                 <span class="text-blue-400">Uptime:</span> ${portfolioData.system.uptime}`,
-        `             \`/:-:++oooo+:                <span class="text-blue-400">Shell:</span> ${portfolioData.system.shell}`,
-        `            \`/++++/+++++++:               <span class="text-blue-400">Resolution:</span> ${portfolioData.system.resolution}`,
-        `           \`/++++++++++++++:              <span class="text-blue-400">Terminal:</span> ${portfolioData.system.terminal}`,
-        `          \`/+++ooooooooo+++/              <span class="text-blue-400">CPU:</span> ${portfolioData.system.cpu}`,
-        `         ./ooosssso++osssssso+\`           <span class="text-blue-400">Memory:</span> ${portfolioData.system.memory}`,
-        `        .oossssso-\`\`\`\`/ossssss+\`          <span class="text-blue-400">Disk:</span> ${portfolioData.system.disk}`,
-        '       -osssssso.      :ssssssso.         <span class="text-blue-400">Skills:</span> <span class="text-red-400">█</span><span class="text-yellow-400">█</span><span class="text-green-400">█</span><span class="text-cyan-400">█</span><span class="text-blue-400">█</span><span class="text-purple-400">█</span><span class="text-pink-400">█</span><span class="text-white">█</span>',
-        `      :osssssss/        osssso+++.        <span class="text-blue-400">Projects:</span> <span class="text-green-400">${portfolioData.system.projectsCompleted} completed</span>`,
-        `     /ossssssss/        +ssssooo/-        <span class="text-blue-400">Languages:</span> ${portfolioData.system.primaryLanguages}`,
-        `   \`/ossssso+/:-        -:/+osssso+-      <span class="text-blue-400">Frameworks:</span> ${portfolioData.system.frameworks}`,
-        `  \`+sso+:-\`                 \`.-/+oso:     <span class="text-blue-400">Database:</span> ${portfolioData.system.databases}`,
-        ` \`++:.                           \`-/+/    <span class="text-blue-400">Tools:</span> ${portfolioData.system.tools}`,
-        ' .\`                                 \`/    ',
+        `<pre class="terminal-ascii-art">\n                   -\`                     <span class="text-green-400">${portfolioData.personal.username}</span><span class="text-white">@</span><span class="text-green-400">portfolio</span>\n                  .o+\`                    <span class="text-white">-----------------</span>\n                 \`ooo/                    <span class="text-blue-400">OS:</span> ${portfolioData.system.os}\n                \`+oooo:                   <span class="text-blue-400">Host:</span> ${portfolioData.system.host}\n               \`+oooooo:                  <span class="text-blue-400">Kernel:</span> ${portfolioData.system.kernel}\n               -+oooooo+:                 <span class="text-blue-400">Uptime:</span> ${portfolioData.system.uptime}\n             \`/:-:++oooo+:                <span class="text-blue-400">Shell:</span> ${portfolioData.system.shell}\n            \`/++++/+++++++:               <span class="text-blue-400">Resolution:</span> ${portfolioData.system.resolution}\n           \`/++++++++++++++:              <span class="text-blue-400">Terminal:</span> ${portfolioData.system.terminal}\n          \`/+++ooooooooo+++/              <span class="text-blue-400">CPU:</span> ${portfolioData.system.cpu}\n         ./ooosssso++osssssso+\`           <span class="text-blue-400">Memory:</span> ${portfolioData.system.memory}\n        .oossssso-\`\`\`\`/ossssss+\`          <span class="text-blue-400">Disk:</span> ${portfolioData.system.disk}\n       -osssssso.      :ssssssso.         <span class="text-blue-400">Skills:</span> <span class="text-red-400">█</span><span class="text-yellow-400">█</span><span class="text-green-400">█</span><span class="text-cyan-400">█</span><span class="text-blue-400">█</span><span class="text-purple-400">█</span><span class="text-pink-400">█</span><span class="text-white">█</span>\n      :osssssss/        osssso+++.        <span class="text-blue-400">Projects:</span> <span class="text-green-400">${portfolioData.system.projectsCompleted} completed</span>\n     /ossssssss/        +ssssooo/-        <span class="text-blue-400">Languages:</span> ${portfolioData.system.primaryLanguages}\n   \`/ossssso+/:-        -:/+osssso+-      <span class="text-blue-400">Frameworks:</span> ${portfolioData.system.frameworks}\n  \`+sso+:-\`                 \`.-/+oso:     <span class="text-blue-400">Database:</span> ${portfolioData.system.databases}\n \`++:.                           \`-/+/    <span class="text-blue-400">Tools:</span> ${portfolioData.system.tools}\n .\`                                 \`/    \n</pre>`
       ]
     }
   };
@@ -237,15 +219,9 @@ export default function App() {
       output: [
         `Welcome to ${portfolioData.personal.name}'s Portfolio Terminal`,
         '',
-        '████████╗███████╗██████╗ ███╗   ███╗██╗███╗   ██╗ █████╗ ██╗     ',
-        '╚══██╔══╝██╔════╝██╔══██╗████╗ ████║██║████╗  ██║██╔══██╗██║     ',
-        '   ██║   █████╗  ██████╔╝██╔████╔██║██║██╔██╗ ██║███████║██║     ',
-        '   ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║██║██║╚██╗██║██╔══██║██║     ',
-        '   ██║   ███████╗██║  ██║██║ ╚═╝ ██║██║██║ ╚████║██║  ██║███████╗',
-        '   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝',
+        `<pre class="terminal-ascii-art">\n████████╗███████╗██████╗ ███╗   ███╗██╗███╗   ██╗ █████╗ ██╗      \n╚══██╔══╝██╔════╝██╔══██╗████╗ ████║██║████╗  ██║██╔══██╗██║      \n   ██║   █████╗  ██████╔╝██╔████╔██║██║██╔██╗ ██║███████║██║      \n   ██║   ██╔══╝  ██╔══██╗██║╚██╔╝██║██║██║╚██╗██║██╔══██║██║      \n   ██║   ███████╗██║  ██║██║ ╚═╝ ██║██║██║ ╚████║██║  ██║███████╗ \n   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝ \n</pre>`,
         '',
         'Type "help" to get started or "about" to learn more about me.',
-        '',
       ],
       timestamp: new Date()
     };
